@@ -1,0 +1,300 @@
+Turn 50
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 6 /\ Pawn in pos 6 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 9 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 100
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 6 /\ Pawn in pos -1 /\ Pawn in pos 9 /\ Pawn in pos 10 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 6 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 24 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 150
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 16 /\ Pawn in pos -1 /\ Pawn in pos 14 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 28 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 6 /\ Pawn in pos -1 /\ Pawn in pos 36 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 200
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 20 /\ Pawn in pos -1 /\ Pawn in pos 25 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 39 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 17 /\ Pawn in pos -1 /\ Pawn in pos 36 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 16 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 250
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 31 /\ Pawn in pos -1 /\ Pawn in pos 28 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos -1 /\ Pawn in pos 53 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 25 /\ Pawn in pos -1 /\ Pawn in pos 46 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 29 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 300
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 40 /\ Pawn in pos -1 /\ Pawn in pos 33 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos 0 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 26 /\ Pawn in pos -1 /\ Pawn in pos 52 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 36 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 350
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 50 /\ Pawn in pos -1 /\ Pawn in pos 36 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos 5 /\ Pawn in pos 59 /\ Pawn in pos 6 /\ >
+Player 2 <Pawn in pos 8 /\ Pawn in pos 32 /\ Pawn in pos -1 /\ Pawn in pos 56 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 42 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 400
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 46 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos 11 /\ Pawn in pos 59 /\ Pawn in pos 14 /\ >
+Player 2 <Pawn in pos 17 /\ Pawn in pos 37 /\ Pawn in pos -1 /\ Pawn in pos 57 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 55 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 450
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ >
+Player 1 <Pawn in pos 2 /\ Pawn in pos 21 /\ Pawn in pos 59 /\ Pawn in pos 20 /\ >
+Player 2 <Pawn in pos 24 /\ Pawn in pos 37 /\ Pawn in pos -1 /\ Pawn in pos 58 /\ >
+Player 3 <Pawn in pos 1 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 500
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 1 /\ >
+Player 1 <Pawn in pos 14 /\ Pawn in pos 21 /\ Pawn in pos 59 /\ Pawn in pos 20 /\ >
+Player 2 <Pawn in pos 33 /\ Pawn in pos 42 /\ Pawn in pos -1 /\ Pawn in pos 58 /\ >
+Player 3 <Pawn in pos 18 /\ Pawn in pos 59 /\ Pawn in pos 3 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 550
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 12 /\ >
+Player 1 <Pawn in pos 22 /\ Pawn in pos 21 /\ Pawn in pos 59 /\ Pawn in pos 24 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 53 /\ Pawn in pos -1 /\ Pawn in pos 58 /\ >
+Player 3 <Pawn in pos 3 /\ Pawn in pos 59 /\ Pawn in pos 12 /\ Pawn in pos 0 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 600
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 27 /\ >
+Player 1 <Pawn in pos 25 /\ Pawn in pos 24 /\ Pawn in pos 59 /\ Pawn in pos 32 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 57 /\ Pawn in pos -1 /\ Pawn in pos 58 /\ >
+Player 3 <Pawn in pos 7 /\ Pawn in pos 59 /\ Pawn in pos 15 /\ Pawn in pos 4 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 650
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 48 /\ >
+Player 1 <Pawn in pos 31 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 16 /\ Pawn in pos 59 /\ Pawn in pos 16 /\ Pawn in pos -1 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 700
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 46 /\ Pawn in pos 10 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos 10 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 21 /\ Pawn in pos 59 /\ Pawn in pos 25 /\ Pawn in pos 3 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 750
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 47 /\ Pawn in pos 19 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ >
+Player 2 <Pawn in pos 15 /\ Pawn in pos 59 /\ Pawn in pos 13 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 43 /\ Pawn in pos 3 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 800
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 47 /\ Pawn in pos 22 /\ Pawn in pos 59 /\ Pawn in pos 11 /\ >
+Player 2 <Pawn in pos 21 /\ Pawn in pos 59 /\ Pawn in pos 23 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 50 /\ Pawn in pos 4 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 850
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 12 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 52 /\ Pawn in pos 24 /\ Pawn in pos 59 /\ Pawn in pos 14 /\ >
+Player 2 <Pawn in pos 31 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 55 /\ Pawn in pos 12 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 900
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 22 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 4 /\ Pawn in pos 26 /\ Pawn in pos 59 /\ Pawn in pos 18 /\ >
+Player 2 <Pawn in pos 44 /\ Pawn in pos 59 /\ Pawn in pos -1 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 19 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 950
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 7 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 15 /\ Pawn in pos 26 /\ Pawn in pos 59 /\ Pawn in pos 20 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 0 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 3 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 28 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 1000
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 17 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 19 /\ Pawn in pos 37 /\ Pawn in pos 59 /\ Pawn in pos 20 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 15 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 13 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 36 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 1050
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 22 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 26 /\ Pawn in pos 42 /\ Pawn in pos 59 /\ Pawn in pos 27 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 27 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 29 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 36 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 1100
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 39 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos 53 /\ Pawn in pos 59 /\ Pawn in pos 35 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 42 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 35 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 40 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 1150
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 50 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 56 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos -1 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ Pawn in pos 51 /\ >
+
+Result: []
+-------------------------------------------------------------
+
+
+Turn 1200
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 27 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 58 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 4 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 57 /\ >
+
+Result: [2, 0]
+-------------------------------------------------------------
+
+
+Turn 1250
+Full Board Size: 58 (52+6)
+
+Player 0 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 1 <Pawn in pos 56 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 2 <Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+Player 3 <Pawn in pos 30 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ Pawn in pos 59 /\ >
+
+Result: [2, 0]
+-------------------------------------------------------------
+
+

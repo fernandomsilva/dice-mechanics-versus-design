@@ -2,6 +2,8 @@ import random
 import dice_mechanics
 from AI import *
 
+import os
+
 number_of_players = 4
 number_of_pawns_per_player = 4
 standard_board_side_size = 13
@@ -151,7 +153,18 @@ class Gamestate:
 		if final_position > self.board_size_player_full + 1:
 			return False
 		
-		traveled_board_area = self.board[pawn.position+1:final_position+1]
+		actual_position = ((pawn.position + standard_board_side_size * pawn.owner_id) % (shared_board_size + 1))
+		if (pawn.position + standard_board_side_size * pawn.owner_id) > shared_board_size:
+			actual_position += 1
+		
+		final_actual_position = (((pawn.position + number_of_steps) + standard_board_side_size * pawn.owner_id) % (shared_board_size + 1))
+		if ((pawn.position + number_of_steps) + standard_board_side_size * pawn.owner_id) > shared_board_size:
+			final_actual_position += 1
+		
+		if actual_position > final_actual_position:
+			traveled_board_area = self.board[actual_position+1:] + self.board[:final_actual_position+1]
+		else:
+			traveled_board_area = self.board[actual_position+1:final_actual_position+1]
 		
 		for position in traveled_board_area:
 			if position != None:
@@ -159,6 +172,21 @@ class Gamestate:
 					return False
 		
 		return True
+	
+	def board_string(self):
+		result = ""
+		template = "xx_x/xx_x/xx_x/xx_x"
+		
+		for i in range(1, len(self.board)):
+			if self.board[i] == None:
+				result += template + " | "
+			else:
+				temp = template
+				for y in self.board[i]:
+					temp = temp.replace("xx_x", str(id(y))[-2:] + "_" + str(y.owner_id), 1)
+				result += temp + " | "
+		
+		return result
 	
 	def make_move(self, action):
 		if (action.move == "Dice Roll"):
@@ -171,22 +199,32 @@ class Gamestate:
 			self.move_history.append(Move(action.move, action.player_id, action.pawn, 0))
 			self.calculate_available_actions()
 		elif (action.move == "Move"):
-			if action.pawn.position < shared_board_size and action.pawn.position > 0:
-				actual_position = ((action.pawn.position + standard_board_side_size * self.current_player) % shared_board_size) + 1
+			#save_log("bug.txt", "------------\nBoard1: " + self.board_string())
+			#save_log("bug.txt", "Pawn: " + str(id(action.pawn))[-2:] + "_" + str(action.pawn.owner_id) + " /\ Pos: " + str(action.pawn.position) + " /\ Steps: " + str(action.value))
+
+			if action.pawn.position <= shared_board_size and action.pawn.position > 0:
+				actual_position = ((action.pawn.position + standard_board_side_size * self.current_player) % (shared_board_size + 1))
+				if (action.pawn.position + standard_board_side_size * self.current_player) > shared_board_size:
+					actual_position += 1
 				if len(self.board[actual_position]) == 1:
 					self.board[actual_position] = None
 				else:
 					self.board[actual_position].remove(action.pawn)
 			action.pawn.position += action.value
-			if action.pawn.position < shared_board_size:
-				actual_position = ((action.pawn.position + standard_board_side_size * self.current_player) % shared_board_size) + 1
-				if self.board[actual_position] != None and len(self.board[actual_position]) > 0:
+			if action.pawn.position <= shared_board_size:
+				actual_position = ((action.pawn.position + standard_board_side_size * self.current_player) % (shared_board_size + 1))
+				if (action.pawn.position + standard_board_side_size * self.current_player) > shared_board_size:
+					actual_position += 1
+				if self.board[actual_position] != None: #and len(self.board[actual_position]) > 0:
 					if self.board[actual_position][0].owner_id == action.pawn.owner_id:
 						self.board[actual_position].append(action.pawn)
-					elif self.board[actual_position][0].owner_id != action.pawn.owner_id and action.pawn.position < shared_board_size:
+						#save_log("bug.txt", "APPEND " + str(len(self.board[actual_position])))
+					elif self.board[actual_position][0].owner_id != action.pawn.owner_id and action.pawn.position <= shared_board_size:
 						self.board[actual_position][0].position = -1
+						#save_log("bug.txt", str(id(self.board[actual_position][0]))[-2:] + "_" + str(self.board[actual_position][0].owner_id) + "  " + str(self.board[actual_position][0].position))
 						self.board[actual_position] = [action.pawn]
 				else:
+					#save_log("bug.txt", "WAS NONE")
 					self.board[actual_position] = [action.pawn]
 			self.move_history.append(Move(action.move, action.player_id, action.pawn, action.value))
 			if self.check_finish(self.current_player):
@@ -196,8 +234,9 @@ class Gamestate:
 						if i not in self.result:
 							self.result.append(i)
 							break
+			#save_log("bug.txt", "Board2: " + self.board_string() + "\n------------")
 			self.calculate_available_actions()
-		else: #Made NO 
+		else: #Made NO move
 			self.current_player = (self.current_player + 1) % number_of_players
 			while self.check_finish(self.current_player):
 				self.current_player = (self.current_player + 1) % number_of_players
@@ -208,12 +247,6 @@ class Gamestate:
 			
 	def calculate_available_actions(self):
 		self.available_actions = []
-		
-		#for action in self.move_history:
-		#	if action.move != None:
-		#		print(str(action.player_id) + " " + action.move)
-		#	else:
-		#		print(str(action.player_id) + " None")
 	
 		if len(self.move_history) < 1:
 			self.available_actions.append(Move("Dice Roll", self.current_player, None, 0))
@@ -285,6 +318,11 @@ class Gameloop:
 				print(turn_count)
 		
 		print(self.gamestate.result)
+
+if os.path.exists("bug.txt"):
+	os.remove("bug.txt")
+if os.path.exists("output.txt"):
+	os.remove("output.txt")
 
 gl = Gameloop(None, [RandomAgent(), RandomAgent(), RandomAgent(), RandomAgent()])
 gl.run_game()
