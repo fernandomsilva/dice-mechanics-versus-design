@@ -112,7 +112,7 @@ class Gamestate:
 		
 		self.board_size_player_full = shared_board_size + private_board_size
 		self.board = [None] * (shared_board_size + 1) # Position 0 is special
-		self.die = dice_mechanic
+		self.die = dice_mechanic.copy()
 		#self.blocked_spaces = []
 		self.result = []
 		
@@ -120,6 +120,65 @@ class Gamestate:
 		self.current_rolls_in_a_row = 0
 		self.available_actions = []
 		self.move_history = []
+	
+	def copy_of_move_history(self, gs_copy):
+		result = []
+		
+		'''
+		pawn_association_table = {}
+		for i in range(0, len(self.players)):
+			for j in range(0, len(self.players[i].pawns)):
+				pawn_association_table[self.players[i].pawns[j]] = gs_copy.players[i].pawns[j]
+		
+		print(pawn_association_table)
+		'''
+		
+		for m in self.move_history:
+			#result.append(m.copy())
+			if m.pawn != None:
+				pawn_owner = m.pawn.owner_id
+				index_pawn_for_player = self.players[pawn_owner].pawns.index(m.pawn)
+				
+				pawn = gs_copy.players[pawn_owner].pawns[index_pawn_for_player]
+				#print(m.pawn.owner_id)
+				#print(self.players[pawn_owner].pawns)
+			else:
+				pawn = None
+			
+			result.append(Move(m.move, m.player_id, pawn, m.value))
+		
+		return result
+	
+	def copy_of_board(self, gs_copy):
+		result = []
+		
+		pawn_association_table = {}
+		for i in range(0, len(self.players)):
+			for j in range(0, len(self.players[i].pawns)):
+				pawn_association_table[self.players[i].pawns[j]] = gs_copy.players[i].pawns[j]
+
+		for entry in self.board:
+			if entry == None:
+				result.append(None)
+			else:
+				new_entry = []
+				for pawn in entry:
+					new_entry.append(pawn_association_table[pawn])
+				
+				result.append(new_entry)
+		
+		return result
+	
+	def copy(self):
+		gamestate_copy = Gamestate(self.players, self.die)
+		gamestate_copy.board = self.copy_of_board(gamestate_copy)
+		gamestate_copy.result = list(self.result)
+		gamestate_copy.current_player = self.current_player
+		gamestate_copy.current_rolls_in_a_row = self.current_rolls_in_a_row
+		gamestate_copy.move_history = self.copy_of_move_history(gamestate_copy)#[move.copy() for move in self.move_history]
+		gamestate_copy.calculate_available_actions()
+		
+		return gamestate_copy
 	
 	def __str__(self):
 		result = ""
@@ -146,6 +205,7 @@ class Gamestate:
 		self.current_rolls_in_a_row = 0
 		self.result = []
 		self.available_actions = []
+		self.move_history = []
 	
 	def check_if_pawn_can_move(self, pawn, number_of_steps):
 		final_position = pawn.position + number_of_steps
@@ -289,18 +349,18 @@ class Gamestate:
 		return True
 
 class Gameloop:
-	def __init__(self, game, AIs):
+	def __init__(self, game, AIs, dice_mec):
 		if game == None:
 			players = []
 			for i in range(0, number_of_players):
 				players.append(Player(i, [-1] * number_of_pawns_per_player))
 			
-			self.gamestate = Gamestate(players, dice_mechanics.Dice(6))
+			self.gamestate = Gamestate(players, dice_mec)#dice_mechanics.Dice(6))
 			
 		self.AIs = AIs
 	
 	def gameloop(self):
-		action = self.AIs[self.gamestate.current_player].choose_action(self.gamestate.available_actions)
+		action = self.AIs[self.gamestate.current_player].choose_action(self.gamestate)
 		self.gamestate.make_move(action)
 		#input()
 
@@ -313,18 +373,23 @@ class Gameloop:
 		while len(self.gamestate.result) < number_of_players:
 			self.gameloop()
 			turn_count += 1
-			if (turn_count % 50) == 0:
-				save_log("output.txt", "Turn " + str(turn_count) + "\n" + str(self.gamestate))
-				print(turn_count)
+			#if (turn_count % 50) == 0:
+			#	save_log("output.txt", "Turn " + str(turn_count) + "\n" + str(self.gamestate))
+			#	print(turn_count)
 		
-		print(self.gamestate.result)
+		#print(self.gamestate.result)
+		
+		return self.gamestate
 
-if os.path.exists("bug.txt"):
-	os.remove("bug.txt")
-if os.path.exists("output.txt"):
-	os.remove("output.txt")
+#print(runNLudoGames(10))
+#if os.path.exists("bug.txt"):
+#	os.remove("bug.txt")
+#if os.path.exists("output.txt"):
+#	os.remove("output.txt")
+	
+#output_file = open("results.csv", 'w')
+#for r in results:
+#	output_file.write(str(r) + '\n')
+#output_file.close()
 
-gl = Gameloop(None, [RandomAgent(), RandomAgent(), RandomAgent(), RandomAgent()])
-gl.run_game()
-
-log_full_game("moves_history.csv", gl.gamestate.move_history)
+#log_full_game("moves_history.csv", gl.gamestate.move_history)
