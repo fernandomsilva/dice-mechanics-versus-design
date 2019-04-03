@@ -121,17 +121,9 @@ class Gamestate:
 		self.available_actions = []
 		self.move_history = []
 	
+	'''
 	def copy_of_move_history(self, gs_copy):
-		result = []
-		
-		'''
-		pawn_association_table = {}
-		for i in range(0, len(self.players)):
-			for j in range(0, len(self.players[i].pawns)):
-				pawn_association_table[self.players[i].pawns[j]] = gs_copy.players[i].pawns[j]
-		
-		print(pawn_association_table)
-		'''
+		result = []	
 		
 		for m in self.move_history:
 			#result.append(m.copy())
@@ -169,6 +161,7 @@ class Gamestate:
 		
 		return result
 	
+	
 	def copy(self):
 		gamestate_copy = Gamestate(self.players, self.die)
 		gamestate_copy.board = self.copy_of_board(gamestate_copy)
@@ -179,6 +172,57 @@ class Gamestate:
 		gamestate_copy.calculate_available_actions()
 		
 		return gamestate_copy
+	'''
+	
+	def takeSnapshot(self):
+		snapshot = {}
+		
+		snapshot['die'] = self.die.copy()
+		snapshot['result'] = len(self.result)
+		snapshot['current_player'] = self.current_player
+		snapshot['current_rolls_in_a_row'] = self.current_rolls_in_a_row
+		snapshot['move_history'] = len(self.move_history)
+		snapshot['pawns'] = {}
+		
+		for player in self.players:
+			if player.id not in snapshot['pawns']:
+				snapshot['pawns'][player.id] = {}
+			
+			for i in range(0, len(player.pawns)):
+				snapshot['pawns'][player.id][i] = player.pawns[i].position
+		
+		return snapshot
+	
+	def loadSnapshot(self, snapshot): #Only loads games with the same amount of players and pawns as it is setup
+		self.die = snapshot['die']
+		self.result = self.result[:snapshot['result']]
+		self.current_player = snapshot['current_player']
+		self.current_rolls_in_a_row = snapshot['current_rolls_in_a_row']
+		self.move_history = self.move_history[:snapshot['move_history']]
+
+		self.board = []
+		self.board = [None] * (shared_board_size + 1)
+		
+		for player_id in snapshot['pawns']:
+			player = self.players[player_id]
+			
+			for pawn_index in snapshot['pawns']:
+				pawn = player.pawns[pawn_index]
+				
+				pawn.position = snapshot['pawns'][player_id][pawn_index]
+				
+				if pawn.position > 0 and pawn.position <= shared_board_size:
+					pawn_actual_position = ((pawn.position + standard_board_side_size * player_id) % (shared_board_size + 1))
+					if (pawn.position + standard_board_side_size * player_id) > shared_board_size:
+						pawn_actual_position += 1
+					
+					if pawn_actual_position > 0:
+						if self.board[pawn_actual_position] == None:
+							self.board[pawn_actual_position] = [pawn]
+						else:
+							self.board[pawn_actual_position].append(pawn)
+
+		self.calculate_available_actions()
 	
 	def __str__(self):
 		result = ""
@@ -380,6 +424,18 @@ class Gameloop:
 		#print(self.gamestate.result)
 		
 		return self.gamestate
+
+#results = []
+#t = 1000
+#for i in range(0, t):
+#	gl = Gameloop(None, [MoveGreedy(), RandomAgent(), RandomAgent(), RandomAgent()], dice_mechanics.Dice(6))
+#	results.append(gl.run_game().result)
+#
+#wins = [0, 0, 0, 0]
+#for r in results:
+#	wins[r.index(0)] += 1
+#
+#print([float(x)/float(t) for x in wins])
 
 #print(runNLudoGames(10))
 #if os.path.exists("bug.txt"):

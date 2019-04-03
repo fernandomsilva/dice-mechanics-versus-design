@@ -35,14 +35,18 @@ class MoveGreedy:
 	
 		max = (None, None)
 		#for move in gstate.available_actions:
+		snapshot = gstate.takeSnapshot()
 		for i in range(0, len(gstate.available_actions)):
-			copy = gstate.copy()
-			move = copy.available_actions[i]
-			copy.make_move(move)
+			#copy = gstate.copy()
+			move = gstate.available_actions[i]
+			#copy.make_move(move)
 
-			value = self.heuristic(copy, player_id)
+			value = self.heuristic(gstate, player_id)
 			if max[0] == None or value > max[0]:
 				max = (value, move)
+			
+			gstate.loadSnapshot(snapshot)
+			snapshot['die'] = gstate.die.copy() # to recreate the dice mechanics copy
 		
 		return max[1]
 

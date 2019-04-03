@@ -1,4 +1,4 @@
-import random, multiprocessing
+import random, multiprocessing, sys, os
 
 from deap import base
 from deap import creator
@@ -6,6 +6,24 @@ from deap import tools
 
 from ludo import *
 
+def make_dir(dir):
+	if not os.path.exists(dir):
+		os.makedirs(dir)
+		
+def saveToFile(filepath, input_str_list):
+	directory_str_list = filepath.split('/')
+	new_directory = ""
+	for dir in directory_str_list[:-1]:
+		new_directory = new_directory + dir + "/"
+		make_dir(new_directory)
+
+	#make_dir(new_directory + "worker_data")
+		
+	file_data = open(filepath, 'a')
+	for line in input_str_list:
+		file_data.write(str(line) + "\n")
+	file_data.close()
+	
 def firstPlayerWinRate(gstate_list):
 	total = 0
 	wins = 0
@@ -33,6 +51,8 @@ def runNLudoGames(individual, n=10):
 
 	return results
 
+directory = sys.argv[1]
+
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 creator.create("Individual", list, fitness=creator.FitnessMax)
 
@@ -48,7 +68,8 @@ toolbox.register("evaluate", evaluate, n=10)
 toolbox.register("mate", tools.cxTwoPoint)
 # register a mutation operator with a probability to
 # flip each attribute/gene of 0.05
-toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)
+#toolbox.register("mutate", tools.mutUniformInt, 0, 10, indpb=0.05)
+toolbox.register("mutate", tools.mutFlipBit, indpb=0.35)
 toolbox.register("select", tools.selTournament, tournsize=3)
 
 def main():
@@ -68,6 +89,7 @@ def main():
     fits = [ind.fitness.values[0] for ind in pop]
 
     g = 0
+    saveToFile(directory + '/gen' + str(g) + '/output.txt', zip(pop, fits))
     
     while max(fits) < 100 and g < 1000:
         g = g + 1
@@ -98,6 +120,7 @@ def main():
         pop[:] = offspring
         
         fits = [ind.fitness.values[0] for ind in pop]
+        saveToFile(directory + '/gen' + str(g) + '/output.txt', zip(pop, fits))
         
         length = len(pop)
         mean = sum(fits) / length

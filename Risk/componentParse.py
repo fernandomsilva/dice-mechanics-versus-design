@@ -31,7 +31,7 @@ def load_deck(filepath):
 
 	filedata = csv.DictReader(open(filepath, 'r'), delimiter=';')
 	for row in filedata:
-		deck_list.append(Card(row['SYMBOL'], row['COUNTRY']))
+		deck_list.append(Card(int(row['SYMBOL']), row['COUNTRY']))
 
 	return deck_list
 	
@@ -40,6 +40,12 @@ def load_board(filepath):
 
 	filedata = csv.DictReader(open(filepath, 'r'), delimiter=';')
 	for row in filedata:
-		board_dict[row['COUNTRY']] = BoardSpace(row['COUNTRY'], row['CONTINENT'], row['CONNECTIONS'])
+		board_dict[row['COUNTRY']] = BoardSpace(row['COUNTRY'], row['CONTINENT'], row['CONNECTIONS'].split('*'))
 
 	return board_dict
+
+#temp = load_board("board.csv")
+#
+#for k in temp:
+#	for c in temp[k].connections:
+#		print(k, c, temp[c])
